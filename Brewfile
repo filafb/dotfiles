@@ -16,6 +16,7 @@ brew 'ffmpeg'
 brew 'fzf'
 brew 'gh'
 brew 'git'
+brew 'go'
 brew 'grep'
 brew 'jq'
 brew 'iterm2'
@@ -25,20 +26,19 @@ brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'mike-engel/jwt-cli/jwt-cli'
 # brew 'mkdocs'
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 'wget'
 brew 'yarn'
 brew 'yq'
-
 
 # Apps
 cask 'firefox'
 cask 'google-chrome'
 # cask 'slack'
 cask 'postman'
+cask 'proxyman'
 cask 'spotify'
 cask 'visual-studio-code'
 cask 'zoom'
-
 
 # Fonts
 cask 'font-lato'

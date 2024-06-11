@@ -29,7 +29,7 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Set up fzf key bindings and fuzzy completion
+# Set up fzf key bindings and fuzzy completion after installation via brew
 source <(fzf --zsh)
 
 # Configure docker using colima
@@ -38,5 +38,9 @@ source <(fzf --zsh)
 # Create a projects directories
 mkdir $HOME/Code
 
+# TODO
 # Download CodeWhisperer for command line (macOS only) https://docs.aws.amazon.com/codewhisperer/latest/userguide/command-line-getting-started-installing.html
+
+# Symlink the Mackup config file to the home directory
+ln -s ./.mackup.cfg $HOME/.mackup.cfg
 

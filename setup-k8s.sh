@@ -1,1 +1,0 @@
-# aws eks update-kubeconfig --region us-east-1 --name prod-dj-iostore-eks-use1c-d3n-base --profile SWE-IO
