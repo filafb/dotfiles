@@ -30,7 +30,7 @@ brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # Set up fzf key bindings and fuzzy completion after installation via brew
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 # Configure docker using colima
 # ./setup-colima.sh
