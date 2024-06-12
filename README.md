@@ -18,3 +18,5 @@ git clone --recursive git@github.com:filafb/dotfiles.git ~/.dotfiles
 ```bash
 cd ~/.dotfiles && ./config-it.sh
 ```
+
+nvm install --lts
