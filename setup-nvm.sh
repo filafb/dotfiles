@@ -2,6 +2,6 @@
 
 echo "Installing nvm..."
 
-git clone --recursive git@github.com:nvm-sh/nvm.git $HOME
+git clone --recursive git@github.com:nvm-sh/nvm.git $HOME/nvm
 $HOME/nvm/install.sh
-rm $HOME/nvm -r
+rm -rf $HOME/nvm
