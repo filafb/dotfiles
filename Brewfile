@@ -44,6 +44,7 @@ cask 'font-open-sans'
 cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
+cask 'font-meslo-for-powerline'
 
 # Mac App Store
 mas 'CopyClip - Clipboard History', id: 595191960

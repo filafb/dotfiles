@@ -18,5 +18,13 @@ git clone --recursive git@github.com:filafb/dotfiles.git ~/.dotfiles
 ```bash
 cd ~/.dotfiles && ./config-it.sh
 ```
+TODO:
 
-nvm install --lts
+Como rodar dentro do script:
+nvm install --lts 
+
+Add step para configurar iterm manualmente
+
+Add step para rodar mackup
+
+Como rodar os arquivos .sh sem precisar dar permissão toda hora?

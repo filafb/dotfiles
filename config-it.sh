@@ -4,7 +4,7 @@ echo "Setting up your Mac..."
 
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+ /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -42,5 +42,5 @@ mkdir $HOME/Code
 # Download CodeWhisperer for command line (macOS only) https://docs.aws.amazon.com/codewhisperer/latest/userguide/command-line-getting-started-installing.html
 
 # Symlink the Mackup config file to the home directory
-ln -s ./.mackup.cfg $HOME/.mackup.cfg
+ln -s ./.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
