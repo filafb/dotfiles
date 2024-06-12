@@ -1,6 +1,4 @@
 # Taps
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Binaries
@@ -12,19 +10,18 @@ brew 'coreutils' # Those that come with macOS are outdated
 # brew dotnet
 # brew docker
 # brew docker-compose
-brew 'ffmpeg'
-brew 'fzf'
+# brew 'ffmpeg'
+# brew 'fzf'
 brew 'gh'
 brew 'git'
 brew 'go'
 brew 'grep'
 brew 'jq'
-brew 'iterm2'
 # brew 'kubectl'
 # brew 'kubectx'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
-brew 'mike-engel/jwt-cli/jwt-cli'
+brew 'jwt-cli'
 # brew 'mkdocs'
 brew 'wget'
 brew 'yarn'
@@ -33,6 +30,7 @@ brew 'yq'
 # Apps
 cask 'firefox'
 cask 'google-chrome'
+cask 'iterm2'
 # cask 'slack'
 cask 'postman'
 cask 'proxyman'
@@ -46,8 +44,6 @@ cask 'font-open-sans'
 cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
 
 # Mac App Store
 mas 'CopyClip - Clipboard History', id: 595191960
