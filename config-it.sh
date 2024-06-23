@@ -35,11 +35,12 @@ brew bundle --file ./Brewfile
 # ./setup-colima.sh
 
 # Create a projects directories
-mkdir $HOME/Code
+if [ ! -d $HOME/Code ]; then
+  mkdir $HOME/Code
+fi
 
-# TODO
-# Download CodeWhisperer for command line (macOS only) https://docs.aws.amazon.com/codewhisperer/latest/userguide/command-line-getting-started-installing.html
+# Copy the .gitignore file to the home directory, since it's usuallyce set once and done
+cp .gitignore $HOME/.gitignore
 
 # Symlink the Mackup config file to the home directory, although the source of truth is in the icloud directory
 ln -s ./.dotfiles/.mackup.cfg $HOME/.mackup.cfg
-

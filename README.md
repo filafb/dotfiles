@@ -18,8 +18,7 @@ git clone --recursive git@github.com:filafb/dotfiles.git ~/.dotfiles
 ```bash
 cd ~/.dotfiles && chmod +x ./config-it.sh && ./config-it.sh
 ```
-TODO:
 
-Add step para configurar iterm manualmente
-
-Add step para rodar mackup
+### Restore preferences
+After mackup is synced with your cloud storage, restore preferences by running mackup restore
+_The restore will run the files saved in the cloud storage. To modify the backed up files, run mackup backup again. It's possible to create targeted backups by modifying the .mackup.cfg file._
