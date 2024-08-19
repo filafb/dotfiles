@@ -36,6 +36,7 @@ cask 'postman'
 cask 'proxyman'
 cask 'spotify'
 cask 'visual-studio-code'
+cask 'warp'
 cask 'zoom'
 
 # Fonts
