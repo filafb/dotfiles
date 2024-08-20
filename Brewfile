@@ -21,7 +21,7 @@ brew 'jq'
 # brew 'kubectx'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
-brew 'jwt-cli'
+brew 'mike-engel/jwt-cli/jwt-cli'
 # brew 'mkdocs'
 brew 'wget'
 brew 'yarn'
