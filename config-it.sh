@@ -32,6 +32,7 @@ brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # Configure docker using colima
+# chmod +x ./setup-colima.sh
 # ./setup-colima.sh
 
 # Create a projects directories
