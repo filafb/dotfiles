@@ -11,7 +11,10 @@ curl https://raw.githubusercontent.com/filafb/dotfiles/HEAD/ssh.sh | sh -s "<you
 ```
 
 ### Clone this repository
+
+```bash
 git clone --recursive git@github.com:filafb/dotfiles.git ~/.dotfiles
+```
 
 ### Run the installation
 
