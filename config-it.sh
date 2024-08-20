@@ -40,7 +40,7 @@ if [ ! -d $HOME/Code ]; then
 fi
 
 # Copy the .gitignore file to the home directory, since it's usuallyce set once and done
-cp .gitignore $HOME/.gitignore
+cp .gitignore_global $HOME/.gitignore_global
 
 # Symlink the Mackup config file to the home directory, although the source of truth is in the icloud directory
 ln -s ./.dotfiles/.mackup.cfg $HOME/.mackup.cfg
