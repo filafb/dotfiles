@@ -28,6 +28,7 @@ brew 'yarn'
 brew 'yq'
 
 # Apps
+cask 'chatgpt'
 cask 'firefox'
 cask 'google-chrome'
 cask 'iterm2'
