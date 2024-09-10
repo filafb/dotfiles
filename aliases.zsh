@@ -1,0 +1,1 @@
+alias mydotfiles="code $DOTFILES"
