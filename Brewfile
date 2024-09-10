@@ -7,7 +7,6 @@ brew 'bash' # Latest Bash version
 # brew 'colima'
 brew 'coreutils' # Those that come with macOS are outdated
 # brew 'derailed/k9s/k9s'
-# brew dotnet
 # brew docker
 # brew docker-compose
 # brew 'ffmpeg'
@@ -29,6 +28,7 @@ brew 'yq'
 
 # Apps
 cask 'chatgpt'
+cask 'dotnet-sdk'
 cask 'firefox'
 cask 'google-chrome'
 cask 'iterm2'
