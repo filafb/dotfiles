@@ -1,19 +1,18 @@
-# Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
-export PATH="/opt/homebrew/bin:$PATH"
-
-# Path to your dotfiles.
-export DOTFILES=$HOME/.dotfiles
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/fila/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/fila/.oh-my-zsh"
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
@@ -31,14 +30,13 @@ ZSH_THEME="agnoster"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -53,6 +51,9 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -69,18 +70,14 @@ ZSH_THEME="agnoster"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-# work box
-# plugins=(git aws)
-# personal box
-plugins=(git)
+plugins=(git aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,27 +86,30 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch arm64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 DEFAULT_USER=fila
 
@@ -117,12 +117,58 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# fzf configuration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Path to enable local development for the toolbelt
-# export PATH=$PATH:$HOME/.vtex/dev/bin
+# Alternative: Source fzf directly from Homebrew installation
+source /opt/homebrew/Cellar/fzf/0.65.2/shell/completion.zsh
+source /opt/homebrew/Cellar/fzf/0.65.2/shell/key-bindings.zsh
 
 # Path to vtex weep
-# export PATH=$HOME/private-weep_0.3.31-vtex.7_darwin_x86_64/bin/darwin_amd64/:$PATH
+export PATH=$HOME/Weep/private-weep_0/bin/darwin_arm64/:$PATH
 
-# Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+# Path to enable local development for VTEX CLI with vtex-test
+export PATH=$PATH:$HOME/.vtex/dev/bin
+
+# Path to Go binaries
+export PATH="$PATH:$HOME/go/bin"export AWS_PROFILE=SWE-IO
+
+defcon_status() {
+  local json level
+  if ! json="$(curl -s --max-time 1 http://defcon-api.vtex.systems/v1/defcon/status 2>/dev/null || true)"; then
+    return
+  fi
+  level="$(printf '%s' "$json" | jq -r '.level' 2>/dev/null)"
+
+  case "$level" in
+    1) color="%{$fg[red]%}";;
+    2) color="%{$fg[red]%}";;
+    3) color="%{$fg[yellow]%}";;
+    4) color="%{$fg[green]%}";;
+    5) color="%{$fg[green]%}";; 
+    *) return ;;
+  esac
+  echo "${color}DEFCON ${level}%{$reset_color%}"
+}
+
+KUBE_PS1_PREFIX="["
+KUBE_PS1_SUFFIX="]"
+KUBE_PS1_HIDE_IF_NOCONTEXT="true"
+KUBE_PS1_NS_ENABLE="false"
+
+# Load kube-ps1 and keep both prompt segments cached per prompt render.
+source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh"
+
+update_rprompt() {
+  DEFCON_PROMPT="$(defcon_status)"
+  KUBE_PROMPT="$(kube_ps1)"
+}
+add-zsh-hook precmd update_rprompt
+
+# Display DEFCON status and Kubernetes context on the right side of the terminal.
+RPROMPT='${DEFCON_PROMPT:+[${DEFCON_PROMPT}]}${KUBE_PROMPT}'
+
+export PATH="$(yarn global bin):$PATH"
+
+# Added by sonarqube-cli installer
+export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"
