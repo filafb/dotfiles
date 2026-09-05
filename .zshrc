@@ -181,6 +181,8 @@ export PATH="$(yarn global bin):$PATH"
 # Added by sonarqube-cli installer
 export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"
 
-# gnubin 
+# gnubin
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
