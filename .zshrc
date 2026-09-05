@@ -120,9 +120,17 @@ export NVM_DIR="$HOME/.nvm"
 # fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Source fzf from Homebrew
-source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
-source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+# Source fzf (modern fzf ships integration via `fzf --zsh`; fall back to Homebrew shell files)
+if command -v fzf >/dev/null 2>&1; then
+  if fzf --zsh >/dev/null 2>&1; then
+    source <(fzf --zsh)
+  else
+    _fzf_prefix="$(brew --prefix 2>/dev/null)/opt/fzf/shell"
+    [ -f "$_fzf_prefix/completion.zsh" ] && source "$_fzf_prefix/completion.zsh"
+    [ -f "$_fzf_prefix/key-bindings.zsh" ] && source "$_fzf_prefix/key-bindings.zsh"
+    unset _fzf_prefix
+  fi
+fi
 
 # Path to vtex weep
 export PATH=$HOME/Weep/private-weep_0/bin/darwin_arm64/:$PATH
